@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from '../logo.svg';
+import { Route } from 'react-router-dom'
+import HomePage from '../components/pages/HomePage'
+import Dashboard from '../components/pages/Dashboard'
+import Executions from '../components/pages/Executions'
+import About from "../components/pages/About";
 import './style/App.css';
+import TopMenu from "../components/TopMenu";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => (
+    <div className='ui container'>
+        <TopMenu/>
+        <Route path='/' exact component={HomePage}/>
+        <Route path='/dashboard' exact component={Dashboard}/>
+        <Route path='/executions' exact component={Executions}/>
+        <Route path='/about' exact component={About}/>
     </div>
-  );
-}
+);
 
 export default App;
