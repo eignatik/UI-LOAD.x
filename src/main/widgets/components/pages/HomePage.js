@@ -10,6 +10,10 @@ const HomePage = () => (
             <Link to='/dashboard'>
                 <Button inverted color='blue'>Get to the Dashboard!</Button>
             </Link>
+            <br/>
+            <Link to={'/about'}>
+                Learn more
+            </Link>
         </div>
     </div>
 );

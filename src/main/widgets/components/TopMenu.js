@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import {Icon, Image, Menu, Segment} from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
+import Logo from '../../resources/logo.png';
 
 export default class TopMenu extends Component {
     state = { activeItem : 'home' };
@@ -12,13 +13,18 @@ export default class TopMenu extends Component {
 
         return (
             <div>
-                <Menu pointing secondary>
+                <Menu pointing >
+                    <Menu.Item>
+                        L
+                        <img src={Logo}/>
+                        AD.x
+                    </Menu.Item>
                     <Menu.Item
                         name='home'
                         as={Link}
                         to='/'
                         active={activeItem === 'home'}
-                        onClick={this.handleItemClick} />
+                        onClick={this.handleItemClick}/>
                     <Menu.Item
                         name='dashboard'
                         as={Link}
