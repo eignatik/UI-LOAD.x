@@ -1,5 +1,4 @@
 import React from 'react';
-import TopMenu from "../TopMenu";
 import {Segment} from "semantic-ui-react";
 
 const Executions = () => (
