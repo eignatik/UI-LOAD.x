@@ -1,6 +1,10 @@
 import React from 'react';
 import {Button, Divider, Form, Grid, Icon, List, Message, Popup, Segment} from "semantic-ui-react";
 
+const textAreaStyle = {
+    resize: 'none'
+};
+
 const Dashboard = () => (
     <Segment>
         <h1>Your dashboard</h1>
@@ -49,7 +53,7 @@ const Dashboard = () => (
                         <div>
                             <Grid columns={2}>
                                 <Grid.Column>
-                                    <h3>Loading of the shop module</h3>
+                                    <h4>Task viewer</h4>
                                 </Grid.Column>
                                 <Grid.Column textAlign={'right'}>
                                     <Button color={'teal'} icon={'edit'} content={'Edit'} labelPosition={'right'}/>
@@ -62,6 +66,14 @@ const Dashboard = () => (
 
                             <div>
                                 <Form>
+                                    <Form.Group>
+                                        <Form.Field readOnly width={16}>
+                                            <Popup
+                                                trigger={<textarea placeholder='Enter task name' rows={2} style={textAreaStyle} value={'Loading of the shop module'}/>}
+                                                content='The task name that will help you to distinguish it between lots of other tasks.'
+                                                position='bottom right'/>
+                                        </Form.Field>
+                                    </Form.Group>
                                     <Form.Group>
                                         <Form.Field readOnly width={6}>
                                             <label>Base url</label>
@@ -91,6 +103,13 @@ const Dashboard = () => (
                                             <Popup
                                                 trigger={<input placeholder='E.g 2h 42m' />}
                                                 content='Please, enter loading time in format hh mm. E.g. 2h 15m, 30m, 1h etc'
+                                                position='bottom right'/>
+                                        </Form.Field>
+                                        <Form.Field readOnly width={3}>
+                                            <label>Parallel threshold</label>
+                                            <Popup
+                                                trigger={<input placeholder='E.g. 5' />}
+                                                content='Please, enter the number of requests to be performed in parallel.'
                                                 position='bottom right'/>
                                         </Form.Field>
                                     </Form.Group>
